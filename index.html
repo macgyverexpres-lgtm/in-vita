@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IN VITA</title>
 
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f1a14;
+  color:#f5e6c8;
+}
+
+section{
+  min-height:100vh;
+  padding:60px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+h1,h2{
+  color:#d4af37;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  border-left:4px solid #d4af37;
+  padding:20px;
+  margin:20px 0;
+  border-radius:8px;
+}
+
+button{
+  background:#d4af37;
+  border:none;
+  padding:12px 18px;
+  border-radius:20px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1>IN VITA</h1>
+  <h2>Memoria Viva</h2>
+  <div class="card">
+    Un sistema donde la memoria se vive, no se archiva.
+  </div>
+</section>
+
+<section>
+  <h2>Recorrido</h2>
+
+  <div class="card">
+    1. Se Recibe — Relato inicial
+  </div>
+
+  <div class="card">
+    2. Se Transita — Movimiento de memoria
+  </div>
+
+  <div class="card">
+    3. Se Transforma — Circulación viva
+  </div>
+</section>
+
+<section>
+  <h2>Cierre</h2>
+
+  <div class="card">
+    IN VITA continúa vivo en cada lectura.
+  </div>
+
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    Volver al inicio
+  </button>
+</section>
+
+</body>
+</html>
