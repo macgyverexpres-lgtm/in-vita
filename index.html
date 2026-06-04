@@ -1,1 +1,178 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IN VITA 2.0 - Biblioteca Viva</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Georgia, serif;
+  background: radial-gradient(circle at top, #0f1a14, #050807);
+  color:#f5e6c8;
+  overflow-x:hidden;
+}
+
+/* PORTADA */
+.portada{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+h1{
+  font-size:4rem;
+  color:#d4af37;
+  margin:0;
+}
+
+.sub{
+  opacity:0.8;
+  margin-top:10px;
+}
+
+/* BIBLIOTECA */
+.biblioteca{
+  padding:60px 20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+/* LIBROS */
+.libro{
+  width:120px;
+  height:160px;
+  background:linear-gradient(135deg,#2e7d32,#1b5e20);
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  transition:0.3s;
+  animation:flotar 4s ease-in-out infinite;
+}
+
+.libro:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(212,175,55,0.5);
+}
+
+@keyframes flotar{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+
+.titulo{
+  font-size:0.75rem;
+  padding:10px;
+  color:#fff;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content{
+  background:#111;
+  padding:30px;
+  border:2px solid #d4af37;
+  width:80%;
+  max-width:500px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  cursor:pointer;
+  color:#d4af37;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="portada">
+  <h1>IN VITA</h1>
+  <div class="sub">Biblioteca Viva - Bloque 1</div>
+</div>
+
+<div class="biblioteca">
+
+  <div class="libro" onclick="abrir(1)"><div class="titulo">La Estación de los Relatos</div></div>
+  <div class="libro" onclick="abrir(2)"><div class="titulo">El Tranvía El Cartero</div></div>
+  <div class="libro" onclick="abrir(3)"><div class="titulo">Ecoparc Senderos</div></div>
+  <div class="libro" onclick="abrir(4)"><div class="titulo">La Siembra</div></div>
+  <div class="libro" onclick="abrir(5)"><div class="titulo">Bosque de la Alegría</div></div>
+
+  <div class="libro" onclick="abrir(6)"><div class="titulo">Fuente de Vida</div></div>
+  <div class="libro" onclick="abrir(7)"><div class="titulo">El Fogón del Cartero</div></div>
+  <div class="libro" onclick="abrir(8)"><div class="titulo">El Cartero del Pesebre</div></div>
+  <div class="libro" onclick="abrir(9)"><div class="titulo">Rueda del Tiempo</div></div>
+  <div class="libro" onclick="abrir(10)"><div class="titulo">Ciguapark</div></div>
+
+  <div class="libro" onclick="abrir(11)" style="background:linear-gradient(135deg,#d4af37,#b8860b)">
+    <div class="titulo">El Umbral del Regreso</div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="cerrar(event)">
+  <div class="modal-content">
+    <div class="close" onclick="cerrar()">&times;</div>
+    <h2 id="tituloModal"></h2>
+    <p>Contenido de estación (Bloque 2 agregará narrativa + imágenes)</p>
+  </div>
+</div>
+
+<script>
+const titulos = {
+  1:"La Estación de los Relatos",
+  2:"El Tranvía El Cartero",
+  3:"Ecoparc Senderos",
+  4:"La Siembra",
+  5:"Bosque de la Alegría Ancestral",
+  6:"Fuente de Vida",
+  7:"El Fogón del Cartero",
+  8:"El Cartero del Pesebre",
+  9:"Rueda del Tiempo Sanador",
+  10:"Ciguapark Ecocomunidad",
+  11:"El Umbral del Regreso"
+};
+
+function abrir(n){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("tituloModal").innerText=titulos[n];
+}
+
+function cerrar(e){
+  if(!e || e.target.id==="modal"){
+    document.getElementById("modal").style.display="none";
+  }
+}
+</script>
+
+</body>
+</html>
